@@ -1,0 +1,212 @@
+header .navbar {
+  background-color: rgba(15, 12, 88, 0.5);
+}
+
+.lien {
+  position: relative;
+  display: inline-block;
+  color: white !important;
+}
+.lien:hover {
+  color: aqua !important;
+}
+.lien::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: aqua;
+  transition: width 2s;
+}
+
+.lien:hover::after {
+  width: 100%;
+}
+
+/* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(270deg, #fef4f2, #fae9dc, #dbe5f7, #e8f9f8);
+  background-size: 800% 800%;
+  animation: gradientAnimation 15s ease infinite;
+  height: 100vh; /* Assurez-vous que le corps prend toute la hauteur de la fenêtre */
+  margin: 0; /* Supprimez les marges par défaut */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8); /* Fond légèrement transparent */
+  backdrop-filter: blur(10px); /* Applique un flou au fond */
+  /* border-radius: 10px; Coins arrondis (optionnel) */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre douce pour la navbar */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: #000;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+  background: rgb(0, 153, 255);
+  border-color: rgb(0, 153, 255);
+  box-shadow: 0px 0px 10px 6px rgba(0, 123, 255, 0.395);
+}
+
+/* Styles responsives */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: left;
+  }
+
+  .navbar-collapse {
+    justify-content: flex-start;
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-toggler {
+    order: 2;
+  }
+
+  .btn-primary.d-lg-none {
+    order: 1;
+    margin-left: 0;
+  }
+}
+
+/* Dégradé de texte */
+.my_title {
+  font-size: 3rem; /* Taille par défaut */
+  background: linear-gradient(45deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  white-space: normal; /* Permet au texte de se diviser en plusieurs lignes */
+  overflow-wrap: break-word; /* Permet de couper les mots si nécessaire */
+  width: 100%; /* Assurez-vous que le titre prend toute la largeur */
+  max-width: 600px; /* Limite la largeur pour forcer le texte à se diviser */
+  margin: 0 auto; /* Centre le titre */
+}
+
+/* Ajustements pour différentes tailles d'écran */
+@media (min-width: 576px) {
+  /* sm */
+  .my_title {
+    font-size: 40px; /* Ajustez la taille pour les écrans sm */
+  }
+}
+
+@media (min-width: 768px) {
+  /* md */
+  .my_title {
+    font-size: 40px; /* Ajustez la taille pour les écrans md */
+  }
+}
+
+@media (min-width: 992px) {
+  /* lg */
+  .my_title {
+    font-size: 35px; /* Ajustez la taille pour les écrans lg */
+  }
+}
+
+@media (min-width: 1200px) {
+  /* xl */
+  .my_title {
+    font-size: 35px; /* Ajustez la taille pour les écrans xl */
+  }
+}
+
+/* Styles pour les cartes */
+.card {
+  background-color: #ffffff !important; /* Fond complètement transparent */
+  border-radius: 15px; /* Coins arrondis */
+  padding: 20px; /* Espacement interne */
+  text-align: center; /* Centrer le texte */
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card i {
+  font-size: 3rem; /* Taille de l'icône */
+  color: #007bff; /* Couleur initiale de l'icône */
+  margin-bottom: 15px; /* Espacement en bas de l'icône */
+  transition: color 0.3s ease;
+}
+
+.card h1 {
+  font-size: 1.5rem; /* Taille de la police pour le titre */
+  margin-bottom: 10px; /* Espacement en bas du titre */
+  color: #333; /* Couleur initiale du titre */
+  transition: color 0.3s ease;
+}
+
+.card p {
+  font-size: 1rem; /* Taille de la police pour le texte */
+  color: #555; /* Couleur initiale du texte */
+  transition: color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Légère élévation au survol */
+  background: rgb(0, 153, 255) !important;
+  border-color: rgb(0, 153, 255);
+  box-shadow: 0px 0px 10px 6px rgba(0, 123, 255, 0.395);
+}
+
+.card:hover i,
+.card:hover h1,
+.card:hover p {
+  color: #ffffff; /* Tous les éléments deviennent blancs au survol */
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+
+  .card i {
+    font-size: 2.5rem;
+  }
+
+  .card h1 {
+    font-size: 1.3rem;
+  }
+}
